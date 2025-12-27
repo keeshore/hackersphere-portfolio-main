@@ -22,7 +22,7 @@ const CTASection = () => {
 
           <p className="font-mono text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
             Join hundreds of innovators and build something extraordinary. 
-            Registration closes January 12, 2025.
+            Registration closes January 12, 2026.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

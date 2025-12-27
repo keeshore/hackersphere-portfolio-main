@@ -3,28 +3,28 @@ import { Calendar, CheckCircle2 } from 'lucide-react';
 const TimelineSection = () => {
   const events = [
     {
-      date: "JAN 2, 2025",
+      date: "JAN 2, 2026",
       title: "Registration Opens",
       description: "Start your journey by registering your team",
       status: "active",
       color: "primary"
     },
     {
-      date: "JAN 12, 2025",
+      date: "JAN 12, 2026",
       title: "Registration Closes",
       description: "Last day to submit your registration",
       status: "upcoming",
       color: "secondary"
     },
     {
-      date: "JAN 20, 2025",
+      date: "JAN 20, 2026",
       title: "Finalist Announcement",
       description: "Shortlisted teams will be announced",
       status: "upcoming",
       color: "accent"
     },
     {
-      date: "FEB 11, 2025",
+      date: "FEB 11, 2026",
       title: "Grand Finale",
       description: "Final presentations and awards ceremony",
       status: "upcoming",

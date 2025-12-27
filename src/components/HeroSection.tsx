@@ -12,7 +12,7 @@ const HeroSection = () => {
       const now = new Date();
       const year = now.getFullYear();
       
-      // Jan 12, 2025 at 11:59 PM
+      // Jan 12, 2026 at 11:59 PM
       const registrationEnd = new Date(year, 0, 12, 23, 59, 59);
       
       // If we're past the registration end date, set to next year
