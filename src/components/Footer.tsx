@@ -23,25 +23,19 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="font-orbitron text-2xl font-bold text-primary neon-glow mb-4">
-              HACKERSPHERE
+              HACKSPHERE
             </h3>
             <p className="font-mono text-muted-foreground mb-6 max-w-md">
               The ultimate hackathon experience where innovation meets opportunity. 
               Join us and shape the future of technology.
             </p>
             <div className="flex items-center gap-4">
-              {[
-                { icon: <Instagram className="w-5 h-5" />, href: "https://www.instagram.com/skasc_computerapplications?igsh=MXg0aHEyYzVsdGgxaA==" },
-                { icon: <Linkedin className="w-5 h-5" />, href: "#" }
-              ].map((social, index) => (
-                <a 
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
-                >
-                  {social.icon}
-                </a>
-              ))}
+              <a 
+                href="https://www.instagram.com/skasc_computerapplications?igsh=MXg0aHEyYzVsdGgxaA=="
+                className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
@@ -65,7 +59,7 @@ const Footer = () => {
             <ul className="space-y-3 font-mono text-sm">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary" />
-                hackersphere@skasc.ac.in
+                hacksphere@skasc.ac.in
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary mt-1" />
@@ -78,7 +72,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-mono text-sm text-muted-foreground">
-            © 2026 HackerSphere. All rights reserved.
+            © 2026 HackSphere. All rights reserved.
           </p>
           <div className="flex items-center gap-6 font-mono text-sm">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

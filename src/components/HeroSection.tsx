@@ -1,8 +1,35 @@
 import { Button } from '@/components/ui/button';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import heroBg from '@/assets/hero-bg.jpg';
+import { useState, useEffect } from 'react';
+import CountdownClock from '@/components/CountdownClock';
 
 const HeroSection = () => {
+  const [isRegistrationActive, setIsRegistrationActive] = useState(true);
+
+  useEffect(() => {
+    const checkRegistrationStatus = () => {
+      const now = new Date();
+      const year = now.getFullYear();
+      
+      // Jan 12, 2025 at 11:59 PM
+      const registrationEnd = new Date(year, 0, 12, 23, 59, 59);
+      
+      // If we're past the registration end date, set to next year
+      if (now > registrationEnd) {
+        registrationEnd.setFullYear(year + 1);
+      }
+      
+      const difference = registrationEnd.getTime() - now.getTime();
+      setIsRegistrationActive(difference > 0);
+    };
+
+    checkRegistrationStatus();
+    const timer = setInterval(checkRegistrationStatus, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -21,7 +48,7 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-green/20 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1s' }} />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 text-center pt-20">
         <div className="animate-float">
           <p className="font-orbitron text-primary text-xl md:text-3xl font-bold tracking-wide mb-4 neon-glow">
             SRI KRISHNA ARTS AND SCIENCE COLLEGE
@@ -31,7 +58,7 @@ const HeroSection = () => {
           </p>
           
           <h1 className="font-orbitron text-5xl md:text-7xl lg:text-8xl font-black mb-6 text-gradient animate-gradient">
-            HACKERSPHERE
+            HACKSPHERE
           </h1>
           
           <p className="font-mono text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-4">
@@ -44,16 +71,20 @@ const HeroSection = () => {
             <span className="w-12 h-px bg-primary" />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScEmKyvSJ6uZq7yvNTvVPG1sUxpvb9C6iRQUeleLXS8SB3IRQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
-              <Button variant="hero" size="xl" className="group">
-                Register Now
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-            <Button variant="neon" size="lg">
-              Learn More
-            </Button>
+          {isRegistrationActive && (
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScEmKyvSJ6uZq7yvNTvVPG1sUxpvb9C6iRQUeleLXS8SB3IRQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" size="xl" className="group">
+                  Register Now
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </a>
+            </div>
+          )}
+
+          {/* Countdown Clock */}
+          <div className="mb-8 max-w-3xl mx-auto">
+            <CountdownClock />
           </div>
 
           <div className="mt-12 flex items-center justify-center gap-8 font-mono text-sm">

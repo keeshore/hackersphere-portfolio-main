@@ -1,15 +1,23 @@
 import { Button } from '@/components/ui/button';
-import { FileText, Presentation, Download, ExternalLink } from 'lucide-react';
+import { FileText, Presentation, Download, ExternalLink, BookOpen } from 'lucide-react';
 
 const ResourcesSection = () => {
   const resources = [
+    {
+      icon: <BookOpen className="w-12 h-12" />,
+      title: "Event Brochure",
+      description: "Complete event details and information brochure",
+      buttonText: "Download Brochure",
+      type: "download",
+      downloadUrl: "/files/hacksphere-brochure.pdf"
+    },
     {
       icon: <Presentation className="w-12 h-12" />,
       title: "PPT Template",
       description: "Professional presentation template for your pitch deck",
       buttonText: "Download Template",
       type: "download",
-      downloadUrl: "/files/hackersphere-ppt-template.pptx"
+      downloadUrl: "/files/hacksphere-ppt-template.pptx"
     },
     {
       icon: <FileText className="w-12 h-12" />,
@@ -17,7 +25,7 @@ const ResourcesSection = () => {
       description: "Complete hackathon rules and participation guidelines",
       buttonText: "Download Rules PDF",
       type: "download",
-      downloadUrl: "/files/hackersphere-rules.pdf"
+      downloadUrl: "/files/hacksphere-rules.pdf"
     }
   ];
 
@@ -36,7 +44,7 @@ const ResourcesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {resources.map((resource, index) => (
             <div 
               key={index}

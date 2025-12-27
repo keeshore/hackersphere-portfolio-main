@@ -20,15 +20,10 @@ const CTASection = () => {
             Ready to <span className="text-gradient">Innovate</span>?
           </h2>
 
-          <p className="font-mono text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+          <p className="font-mono text-muted-foreground text-lg mb-12 max-w-2xl mx-auto">
             Join hundreds of innovators and build something extraordinary. 
             Registration closes January 12, 2025.
           </p>
-
-          {/* Countdown Clock */}
-          <div className="mb-12">
-            <CountdownClock />
-          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScEmKyvSJ6uZq7yvNTvVPG1sUxpvb9C6iRQUeleLXS8SB3IRQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">

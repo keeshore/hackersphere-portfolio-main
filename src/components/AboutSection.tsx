@@ -39,7 +39,7 @@ const AboutSection = () => {
             Enter the <span className="text-gradient">Sphere</span>
           </h2>
           <p className="font-mono text-muted-foreground max-w-3xl mx-auto text-lg">
-            HackerSphere is not just a hackathon—it's a launchpad for the next generation of innovators. 
+            HackSphere is not just a hackathon—it's a launchpad for the next generation of innovators. 
             Join us in a 48-hour journey where creativity meets technology, and ideas become reality.
           </p>
         </div>
